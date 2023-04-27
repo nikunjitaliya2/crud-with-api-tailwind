@@ -7,6 +7,13 @@ import {
 } from '@heroicons/vue/24/solid'
 
 import {RouterLink} from 'vue-router'
+
+function deleteStudent(id) {
+  if(!window.confirm('Are you sure!!')){
+    return;
+  }
+  console.log('id deleted ---> ' , id)
+}
 </script>
 
 <template>
@@ -53,8 +60,10 @@ import {RouterLink} from 'vue-router'
             <RouterLink :to="{name : 'view', params : {id : 1}}">
               <EyeIcon class="text-red-600 h-6 w-6"/>
             </RouterLink>
+            <RouterLink :to="{name : 'edit', params : {id : 1}}">
             <PencilIcon class="text-blue-600 h-6 w-6 mx-4"/>
-            <TrashIcon class="text-orange-600 h-6 w-6"/>
+            </RouterLink>
+            <TrashIcon @click="deleteStudent(1)" class="text-orange-600 h-6 w-6 cursor-pointer"/>
           </div>
         </td>
       </tr>
