@@ -17,12 +17,10 @@ const {addToCart} = useCart();
 onMounted(AllProductList)
 
 const deleteStudent = async (id) => {
-  console.log('this is deleted id ---> ', id);
   await deleteProduct(id);
   await AllProductList()
 }
 const cart = async (data) => {
-  console.log('data ---> ', data);
   await addToCart(data)
 };
 

@@ -41,10 +41,30 @@ export default function useCart() {
         }
     }
 
+    const removeCart =  async (id) => {
+        cartData.value = [];
+        cartError.value = null;
+        try{
+            const config = {
+                method: 'DELETE',
+                url: `${url}/cart/${id}`,
+                headers : {
+                    'Content-Type': 'Application/json'
+                },
+            }
+            const res = await axios(config)
+            cartData.value = res.data
+        }
+        catch (err) {
+            cartError.value = err;
+        }
+    }
+
     return {
         cartData,
         cartError,
         addToCart,
         ViewCartList,
+        removeCart
     }
 }
