@@ -71,7 +71,6 @@ export default function useProduct() {
     const AddProduct = async (formData) => {
         productData.value = [];
         productError.value = null;
-
         try{
             const config = {
                 method: 'POST',
@@ -88,6 +87,7 @@ export default function useProduct() {
             productError.value = err;
         }
     }
+
 
     return {
         productError,

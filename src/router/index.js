@@ -6,6 +6,8 @@ import View from '../components/students/View.vue'
 import Product from '../components/products/ProductList.vue'
 import ProductEdit from '../components/products/EditProduct.vue'
 import AddProduct from '../components/products/AddProduct.vue'
+import ViewCart from '../components/cart/ViewCart.vue'
+import CartView from '../components/cart/CartView.vue'
 import NotFound from '../views/NotFound.vue'
 
 
@@ -45,6 +47,16 @@ const routes = [
         name : 'addproduct',
         component :  AddProduct
     },
+    {
+        path: '/cart',
+        name : 'cart',
+        component :  ViewCart
+    },
+    // {
+    //     path: '/cart',
+    //     name : 'cart',
+    //     component :  CartView
+    // },
     {
         path: '/:pathMatch(.*)*',
         name : 'NotFound',
