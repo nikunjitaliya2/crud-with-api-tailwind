@@ -52,11 +52,11 @@ const routes = [
         name : 'cart',
         component :  ViewCart
     },
-    // {
-    //     path: '/cart',
-    //     name : 'cart',
-    //     component :  CartView
-    // },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+    },
     {
         path: '/:pathMatch(.*)*',
         name : 'NotFound',

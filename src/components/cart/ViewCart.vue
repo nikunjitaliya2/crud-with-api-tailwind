@@ -8,15 +8,12 @@ import {onMounted} from "vue";
 const {cartData, cartError, ViewCartList,removeCart} = useCart();
 onMounted(ViewCartList);
 
-console.log('cartData ---> ',cartData)
-
 const removeItem = async (id,cart) => {
   await removeCart(id, cart);
   await ViewCartList();
 }
 
 
-// console.log('cartData', cartData)
 </script>
 <template>
 

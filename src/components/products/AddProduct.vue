@@ -10,6 +10,8 @@ import {
 import {reactive} from "vue";
 import router from "../../router";
 import useProduct from '../../composables/productApi';
+import {Notify} from "quasar";
+
 const {AddProduct} = useProduct();
 
 
@@ -28,10 +30,29 @@ const addProduct = reactive({
 const addNewProduct = async () => {
   // console.log('addProduct --->', addProduct)
   await AddProduct(addProduct);
+  await notification();
 };
 
 const back = () => {
-    router.back();
+  router.back();
+}
+const notification = (id) => {
+  Notify.create({
+    type: 'positive',
+    message: 'Product Will Successfully Added',
+    position: 'top',
+    actions: [
+      {
+        label: 'View', color: 'yellow', handler: () => {
+          router.push('/products')
+        }
+      },
+      {
+        label: 'Dismiss', color: 'white', handler: () => { /* ... */
+        }
+      }
+    ]
+  })
 }
 
 </script>
@@ -41,60 +62,56 @@ const back = () => {
   </div>
   <form class=" bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="addNewProduct()">
     <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="productId">
-        Product id
-      </label>
-      <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="productId" type="number" placeholder="Enter Id" v-model.trim="addProduct.id">
+
+      <q-input outlined v-model.trim="addProduct.id" label="Product id" type="number"
+               :rules="[
+          val => !!val || 'Field is required',
+          val => val.length > 1 || 'Please fill this field'
+        ]" required/>
     </div>
     <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-        Title
-      </label>
-      <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="username" type="text" placeholder="Enter Title" v-model.trim="addProduct.title">
+
+
+      <q-input
+          ref="inputRef"
+          outlined
+          v-model="addProduct.title"
+          label="Title"
+          :rules="[val => !!val || 'Field is required']"
+          required
+      />
     </div>
     <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="price">
-        Price
-      </label>
-      <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="price" type="text" placeholder="Enter Price" v-model.trim="addProduct.price">
+      <q-input outlined v-model="addProduct.price" type="number" label="Price"
+               :rules="[val => !!val || 'Field is required']"
+               required/>
     </div>
     <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
-        Description
-      </label>
-      <textarea
-          class="shadow appearance-none border rounded w-full py-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="description" type="text" placeholder="Enter Description" v-model.trim="addProduct.description"></textarea>
+
+      <q-input
+          outlined
+          label="Description"
+          v-model="addProduct.description"
+          type="textarea"
+          :rules="[val => !!val || 'Field is required']"
+          required
+      />
+
     </div>
     <div class="mb-6">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="category">
-        Category
-      </label>
-      <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="category" type="text" placeholder="Enter Category" v-model.trim="addProduct.category">
+
+      <q-input outlined v-model="addProduct.category" type="text" label="Category"
+               :rules="[val => !!val || 'Field is required']"
+               required/>
+
     </div>
+
     <div class="mb-6">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="rating">
-        Rating
-      </label>
-      <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="rating" type="number" placeholder="Enter rate between 1 to 5" v-model.trim="addProduct.rating.rate">
-    </div>
-    <div class="mb-6">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="rating">
-        Total Available Product Peaces
-      </label>
-      <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="count" type="number" placeholder="Enter Product Count" v-model.trim="addProduct.rating.count">
+
+      <q-input outlined v-model="addProduct.rating.count" type="number" label="Enter Product Counts"
+               :rules="[val => !!val || 'Enter Total Available Product Peaces']"
+               required/>
+
     </div>
     <div class="flex items-center justify-between">
       <button

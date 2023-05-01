@@ -7,6 +7,7 @@ const url = APP_CONFIG.BASE_URL
 export default function useCart() {
     const cartData = ref([]);
     const cartError = ref('');
+    const cartStatus = ref('');
     const addToCart = async (data) => {
         cartData.value = [];
         cartError.value = null;
@@ -19,20 +20,18 @@ export default function useCart() {
                 },
                 data : JSON.stringify(data)
             }
-
-            console.log('config -->',config)
             const res = await axios(config)
-            cartData.value = res.data
+            cartData.value = res.data;
+            cartStatus.value = res.status
         }
         catch (err) {
-            cartData.value = err;
+            cartError.value = err;
         }
     }
     const ViewCartList = async () => {
         cartData.value = [];
         cartError.value = null;
         try {
-            // console.log('config -->',config)
             const res = await axios(`${url}/cart`)
             cartData.value = res.data
         }
@@ -61,6 +60,7 @@ export default function useCart() {
     }
 
     return {
+        cartStatus,
         cartData,
         cartError,
         addToCart,
