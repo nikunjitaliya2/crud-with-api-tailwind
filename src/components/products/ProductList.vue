@@ -32,8 +32,9 @@ const deleteStudent = async (id) => {
       })
       await ViewCartList();
       Notify.create({
-        type: 'warning',
+        type: 'negative',
         message: 'Product will removed from every where',
+        position : "top",
       })
     }
 }
@@ -78,12 +79,11 @@ const notification = (id) => {
           }
         },
         {
-          label: 'Dismiss', color: 'white', handler: () => { /* ... */
+          label: 'Dismiss', color: 'white', handler: () => {
           }
         }
       ]
     })
-
   }
 }
 </script>

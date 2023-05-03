@@ -4,7 +4,6 @@ import {APP_CONFIG} from "../enviroments/BaseUrl";
 
 const url = APP_CONFIG.BASE_URL
 
-
 export default function useProduct() {
     const productData = ref([]);
     const productError = ref('');

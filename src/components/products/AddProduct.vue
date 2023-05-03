@@ -27,6 +27,11 @@ const addProduct = reactive({
     count: ''
   },
 })
+
+const onFileSelected = async (event) =>  {
+  const file = event.target.files[0].name;
+  console.log(file); // Log the selected file's data
+}
 const addNewProduct = async () => {
   // console.log('addProduct --->', addProduct)
   await AddProduct(addProduct);
@@ -98,6 +103,16 @@ const notification = (id) => {
       />
 
     </div>
+    <div class="mb-4">
+      <q-input
+          outlined
+          label="Image"
+          v-model="addProduct.image"
+          type="file"
+          @change="onFileSelected"
+          :rules="[val => !!val || 'Field is required']"
+          required/>
+    </div>
     <div class="mb-6">
 
       <q-input outlined v-model="addProduct.category" type="text" label="Category"
@@ -116,7 +131,8 @@ const notification = (id) => {
     <div class="flex items-center justify-between">
       <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit">
+          type="submit"
+          :disabled="!(addProduct.id && addProduct.description && addProduct.rating.count && addProduct.price && addProduct.category)">
         Add Product
       </button>
       <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" type="button">

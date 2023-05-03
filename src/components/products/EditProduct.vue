@@ -16,8 +16,7 @@ onMounted(async () => {
 })
 const updateProductDetails = async () => {
   await updateProduct(params.id, productData.value);
-  // console.log('productData ---> ',productData)
-
+  console.log('productData ---> ', productData.value);
   await back();
 };
 function back() {
@@ -40,65 +39,130 @@ function back() {
   </div>
 
   <div class="w-[80%] h-[60vh] mx-auto flex  flex-col" v-else-if="productData">
+<!--    <form class=" bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="updateProductDetails()">-->
+<!--      <div class="mb-4">-->
+<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">-->
+<!--          Product id-->
+<!--        </label>-->
+<!--        <input-->
+<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"-->
+<!--            id="productId" type="number" placeholder="Enter Name" v-model.trim="productData.id">-->
+<!--      </div>-->
+<!--      <div class="mb-4">-->
+<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">-->
+<!--          Title-->
+<!--        </label>-->
+<!--        <input-->
+<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"-->
+<!--            id="username" type="text" placeholder="Enter Name" v-model.trim="productData.title">-->
+<!--      </div>-->
+<!--      <div class="mb-4">-->
+<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">-->
+<!--          Price-->
+<!--        </label>-->
+<!--        <input-->
+<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"-->
+<!--            id="price" type="text" placeholder="Enter Name" v-model.trim="productData.price">-->
+<!--      </div>-->
+<!--      <div class="mb-4">-->
+<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">-->
+<!--          Change Description-->
+<!--        </label>-->
+<!--        <textarea-->
+<!--            class="shadow appearance-none border rounded w-full py-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"-->
+<!--            id="description" type="text" placeholder="Enter Name" v-model.trim="productData.description"></textarea>-->
+<!--      </div>-->
+<!--      <div class="mb-6">-->
+<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">-->
+<!--          Category-->
+<!--        </label>-->
+<!--        <input-->
+<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"-->
+<!--            id="password" type="text" placeholder="Enter Email" v-model.trim="productData.category">-->
+<!--      </div>-->
+<!--      <div class="mb-6">-->
+<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="image">-->
+<!--          paste Img url online only😅😅😅-->
+<!--        </label>-->
+<!--        <input-->
+<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"-->
+<!--            id="image" type="text" placeholder="Enter Email" v-model.trim="productData.image">-->
+<!--      </div>-->
+<!--      <div class="flex items-center justify-between">-->
+<!--        <button-->
+<!--            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"-->
+<!--            type="submit">-->
+<!--          update-->
+<!--        </button>-->
+<!--        <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" type="button">-->
+<!--          <ArrowUturnLeftIcon @click="back()" title="BACK" class="text-blue-600 cursor-pointer text-black w-6 h-6"/>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </form>-->
+
     <form class=" bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="updateProductDetails()">
       <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-          Product id
-        </label>
-        <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="productId" type="number" placeholder="Enter Name" v-model.trim="productData.id">
+
+        <q-input outlined v-model.trim="productData.id" label="Product id" type="number" readonly
+                 :rules="[
+          val => !!val || 'Field is required',
+          val => val.length > 1 || 'Please fill this field'
+        ]" required/>
       </div>
       <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-          Title
-        </label>
-        <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username" type="text" placeholder="Enter Name" v-model.trim="productData.title">
+
+
+        <q-input
+            ref="inputRef"
+            outlined
+            v-model="productData.title"
+            label="Title"
+            :rules="[val => !!val || 'Field is required']"
+            required
+        />
       </div>
       <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-          Price
-        </label>
-        <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="price" type="text" placeholder="Enter Name" v-model.trim="productData.price">
+        <q-input outlined v-model="productData.price" type="number" label="Price"
+                 :rules="[val => !!val || 'Field is required']"
+                 required/>
       </div>
       <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-          Change Description
-        </label>
-        <textarea
-            class="shadow appearance-none border rounded w-full py-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="description" type="text" placeholder="Enter Name" v-model.trim="productData.description"></textarea>
+
+        <q-input
+            outlined
+            label="Description"
+            v-model="productData.description"
+            type="textarea"
+            :rules="[val => !!val || 'Field is required']"
+            required
+        />
+
       </div>
       <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-          Category
-        </label>
-        <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password" type="text" placeholder="Enter Email" v-model.trim="productData.category">
+
+        <q-input outlined v-model="productData.category" type="text" label="Category"
+                 :rules="[val => !!val || 'Field is required']"
+                 required/>
+
       </div>
+
       <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="image">
-          paste Img url online only😅😅😅
-        </label>
-        <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="image" type="text" placeholder="Enter Email" v-model.trim="productData.image">
+
+        <q-input outlined v-model="productData.image" type="text" label="Image url online only"
+                 :rules="[val => !!val || 'Paste image url']"
+                 required/>
       </div>
-      <div class="flex items-center justify-between">
-        <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit">
-          update
-        </button>
-        <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" type="button">
+      <div class="flex items-center justify-between" >
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                  update
+                </button>
+        <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" type="button" >
           <ArrowUturnLeftIcon @click="back()" title="BACK" class="text-blue-600 cursor-pointer text-black w-6 h-6"/>
         </button>
       </div>
     </form>
+
   </div>
 </template>

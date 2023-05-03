@@ -11,43 +11,30 @@
       "id": 18
     }
   ],
-  "cart": [
-    {
-      "id": "323",
-      "title": "Laboriosam totam of",
-      "price": "396",
-      "description": "Excepturi minim ut e",
-      "category": "Ipsum autem fugiat ",
-      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-      "rating": {
-        "rate": "",
-        "count": "427"
-      }
-    }
-  ],
+  "cart": [],
   "products": [
     {
-      "id": "646",
-      "title": "Enim non non sunt v",
-      "price": "541",
-      "description": "Sint officia nihil ",
-      "category": "Explicabo Proident",
-      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "id": "903",
+      "title": "Excepteur enim quam ",
+      "price": "703",
+      "description": "Magnam consequatur ",
+      "category": "Ipsam quibusdam veli",
+      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
       "rating": {
         "rate": "",
-        "count": "938"
+        "count": "518"
       }
     },
     {
-      "id": "323",
-      "title": "Laboriosam totam of",
-      "price": "396",
-      "description": "Excepturi minim ut e",
-      "category": "Ipsum autem fugiat ",
-      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "id": "629",
+      "title": "Nikunj changed title",
+      "price": "748",
+      "description": "Molestias officia ul",
+      "category": "Numquam expedita at ",
+      "image": "https://www.linkpicture.com/q/wallpaperflare.com_wallpaper_11.jpg",
       "rating": {
         "rate": "",
-        "count": "427"
+        "count": "162"
       }
     }
   ]
