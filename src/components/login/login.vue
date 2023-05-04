@@ -23,7 +23,7 @@ const loginForm = async () => {
 }
 </script>
 <template>
-  <div class="w-[80%] mx-auto h-[100vh] flex justify-center flex-col">
+  <div class="container mx-auto h-[80vh] flex justify-center flex-col">
     <div class="opacity-50 p-5 flex items-center justify-center ">
       <h1 class="text-xl md:text-3xl font-bold text-center uppercase">Login</h1>
     </div>

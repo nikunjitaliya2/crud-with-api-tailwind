@@ -26,7 +26,7 @@ function back() {
 
 <template>
 
-  <div class="opacity-50 p-5 flex items-center justify-between container mx-auto">
+  <div class="opacity-50 p-5 flex items-center justify-between">
     <h1 class="text-xl md:text-3xl font-bold text-center uppercase">Update Product</h1>
     <RouterLink to="/products">
       <ArrowUturnLeftIcon class="text-black w-6 h-6"/>
@@ -38,68 +38,7 @@ function back() {
     </p>
   </div>
 
-  <div class="w-[80%] h-[60vh] mx-auto flex  flex-col" v-else-if="productData">
-<!--    <form class=" bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="updateProductDetails()">-->
-<!--      <div class="mb-4">-->
-<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">-->
-<!--          Product id-->
-<!--        </label>-->
-<!--        <input-->
-<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"-->
-<!--            id="productId" type="number" placeholder="Enter Name" v-model.trim="productData.id">-->
-<!--      </div>-->
-<!--      <div class="mb-4">-->
-<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">-->
-<!--          Title-->
-<!--        </label>-->
-<!--        <input-->
-<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"-->
-<!--            id="username" type="text" placeholder="Enter Name" v-model.trim="productData.title">-->
-<!--      </div>-->
-<!--      <div class="mb-4">-->
-<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">-->
-<!--          Price-->
-<!--        </label>-->
-<!--        <input-->
-<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"-->
-<!--            id="price" type="text" placeholder="Enter Name" v-model.trim="productData.price">-->
-<!--      </div>-->
-<!--      <div class="mb-4">-->
-<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">-->
-<!--          Change Description-->
-<!--        </label>-->
-<!--        <textarea-->
-<!--            class="shadow appearance-none border rounded w-full py-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"-->
-<!--            id="description" type="text" placeholder="Enter Name" v-model.trim="productData.description"></textarea>-->
-<!--      </div>-->
-<!--      <div class="mb-6">-->
-<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">-->
-<!--          Category-->
-<!--        </label>-->
-<!--        <input-->
-<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"-->
-<!--            id="password" type="text" placeholder="Enter Email" v-model.trim="productData.category">-->
-<!--      </div>-->
-<!--      <div class="mb-6">-->
-<!--        <label class="block text-gray-700 text-sm font-bold mb-2" for="image">-->
-<!--          paste Img url online only😅😅😅-->
-<!--        </label>-->
-<!--        <input-->
-<!--            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"-->
-<!--            id="image" type="text" placeholder="Enter Email" v-model.trim="productData.image">-->
-<!--      </div>-->
-<!--      <div class="flex items-center justify-between">-->
-<!--        <button-->
-<!--            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"-->
-<!--            type="submit">-->
-<!--          update-->
-<!--        </button>-->
-<!--        <button class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" type="button">-->
-<!--          <ArrowUturnLeftIcon @click="back()" title="BACK" class="text-blue-600 cursor-pointer text-black w-6 h-6"/>-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </form>-->
-
+  <div class="w-[80%] h-[60vh] mx-auto flex  flex-col container " v-else-if="productData">
     <form class=" bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="updateProductDetails()">
       <div class="mb-4">
 

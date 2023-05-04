@@ -11,30 +11,79 @@
       "id": 18
     }
   ],
-  "cart": [],
-  "products": [
+  "cart": [
     {
-      "id": "903",
-      "title": "Excepteur enim quam ",
-      "price": "703",
-      "description": "Magnam consequatur ",
-      "category": "Ipsam quibusdam veli",
-      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "id": "814",
+      "title": "Consequuntur invento",
+      "price": "666",
+      "description": "Consequat Nihil qui",
+      "category": "Dolore iusto ut odio",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
       "rating": {
         "rate": "",
-        "count": "518"
+        "count": "543"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "949",
+      "title": "Exercitation recusan",
+      "price": "549",
+      "description": "Sed fuga Quas molli",
+      "category": "Sequi pariatur Ab m",
+      "image": "https://images.unsplash.com/photo-1682588382547-1580de1a5338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+      "rating": {
+        "rate": "",
+        "count": "16"
       }
     },
     {
-      "id": "629",
-      "title": "Nikunj changed title",
-      "price": "748",
-      "description": "Molestias officia ul",
-      "category": "Numquam expedita at ",
-      "image": "https://www.linkpicture.com/q/wallpaperflare.com_wallpaper_11.jpg",
+      "id": "661",
+      "title": "Recusandae Aliquip ",
+      "price": "401",
+      "description": "Sint sint qui cum v",
+      "category": "Doloribus nihil illo",
+      "image": "https://images.unsplash.com/photo-1682955446734-ed483c974105?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
       "rating": {
         "rate": "",
-        "count": "162"
+        "count": "45"
+      }
+    },
+    {
+      "id": "814",
+      "title": "Consequuntur invento",
+      "price": "666",
+      "description": "Consequat Nihil qui",
+      "category": "Dolore iusto ut odio",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "rating": {
+        "rate": "",
+        "count": "543"
+      }
+    },
+    {
+      "id": "392",
+      "title": "Quidem ut dolores no",
+      "price": "297",
+      "description": "Repellendus Adipisi",
+      "category": "Id pariatur Saepe n",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "rating": {
+        "rate": "",
+        "count": "431"
+      }
+    },
+    {
+      "id": "641",
+      "title": "Ipsum quaerat conseq",
+      "price": "241",
+      "description": "Perferendis veniam ",
+      "category": "Labore culpa animi ",
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "rating": {
+        "rate": "",
+        "count": "283"
       }
     }
   ]
