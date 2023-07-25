@@ -27,3 +27,13 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### install json for api
+```sh
+npm install -g json-server
+```
+### Start JSON Server
+```sh
+json-server --watch db.json
+```
+
